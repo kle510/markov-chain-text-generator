@@ -1,7 +1,3 @@
-// Author: Kevin L
-// https://github.com/kle510
-// November 2016
-
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Set;
