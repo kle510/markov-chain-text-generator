@@ -1,7 +1,3 @@
-// Author: Kevin L
-// https://github.com/kle510
-// November 2016
-
 /*
  * OutfileFormatting Class
  * 
@@ -11,7 +7,6 @@
  * Condition: 80 character lines length, flush left, ragged right
  * 
  * 
-
 */
 
 public class OutfileFormatting {
@@ -21,12 +16,8 @@ public class OutfileFormatting {
 	/*
 	 * outFileFormat method
 	 * 
-	 * Split the string input into words in a String array. Add each word to
-	 * line such that no line is more than 80 characters.
-	 * 
-	 * @param input the string from RandomTextGenerator output.
-	 * 
-	 * @return Resulting string in appropriate format.
+	 * Split the string input into words in a String array. Add each word to line
+	 * such that no line is more than 80 characters.
 	 * 
 	 */
 
@@ -55,5 +46,4 @@ public class OutfileFormatting {
 
 		return result;
 	}
-
 }

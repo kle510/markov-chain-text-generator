@@ -1,7 +1,3 @@
-// Author: Kevin L
-// https://github.com/kle510
-// November 2016
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,13 +21,6 @@ public class Prefix {
 
 	private HashMap<List<String>, Successor> map;
 
-	/*
-	 * Prefix Constructor
-	 * 
-	 * creates a new HashMap
-	 * 
-	 */
-
 	public Prefix() {
 		map = new HashMap<List<String>, Successor>();
 
@@ -40,13 +29,9 @@ public class Prefix {
 	/*
 	 * add method
 	 * 
-	 * Retrieve the word sequence from the HashMap if the word sequence is
-	 * already there Add word sequence to HashMap if the word sequence isn't
-	 * there already Add the successor word to that word sequence.
-	 * 
-	 * 
-	 * @param word sequence and successor word.
-	 * 
+	 * Retrieve the word sequence from the HashMap if the word sequence is already
+	 * there Add word sequence to HashMap if the word sequence isn't there already
+	 * Add the successor word to that word sequence.
 	 */
 
 	public void add(List<String> wordSequence, String nextWord) {
@@ -67,10 +52,6 @@ public class Prefix {
 	 * 
 	 * Passes source file through Scanner to read text from file Adds words to
 	 * ArrayList of strings
-	 * 
-	 * @param String name of source file, prefixLength for exception handling
-	 * 
-	 * @return ArrayList of words as strings
 	 */
 
 	public static ArrayList<String> getAllWords(String inFile, int prefixLength) throws IOException {
@@ -92,11 +73,9 @@ public class Prefix {
 	/*
 	 * buildWordSequences method
 	 * 
-	 * Receives ArrayList of words as parameter. Cuts them into word sequences
-	 * based on prefixLength. Cuts out the successor word following the
-	 * sequence. Adds the word sequence and successor word to the HashMap.
-	 * 
-	 * @param list of words as ArrayList of strings. prefixLength.
+	 * Receives ArrayList of words as parameter. Cuts them into word sequences based
+	 * on prefixLength. Cuts out the successor word following the sequence. Adds the
+	 * word sequence and successor word to the HashMap.
 	 */
 
 	public void buildWordSequences(ArrayList<String> list, int prefixLength) {
@@ -106,7 +85,6 @@ public class Prefix {
 			String nextWord;
 			wordSequence = list.subList(i, i + prefixLength);
 			nextWord = list.get(i + prefixLength);
-
 			add(wordSequence, nextWord);
 		}
 	}
@@ -116,15 +94,11 @@ public class Prefix {
 	 * 
 	 * Retrieves name of sourceFile and prefixLength. Executes getAllWords and
 	 * buildWordSequences method.
-	 * 
-	 * @param source file name, prefix length.
-	 * 
 	 */
 
 	public void processInputText(String inFile, int prefixLength) throws IOException {
 		ArrayList<String> inputText = getAllWords(inFile, prefixLength);
 		buildWordSequences(inputText, prefixLength);
-
 	}
 
 	/*
@@ -132,10 +106,6 @@ public class Prefix {
 	 * 
 	 * Retrieves a word sequence as input and gets a successor word from the
 	 * sequence.
-	 * 
-	 * @param a sequence of words.
-	 * 
-	 * @return a random successor word to that word sequence.
 	 */
 
 	public String getNextWord(List<String> wordSequence, boolean DEBUG) {
@@ -147,18 +117,12 @@ public class Prefix {
 			return successorWord;
 		}
 
-		// No word sequence case handled in outputText method of
-		// RandomTextGenerator
+		// No word sequence case is handled in outputText method of RandomTextGenerator
 		return "";
 	}
 
 	/*
-	 * getAllSuccessors method 
-	 * Returns all successors for a word sequence.
-	 * 
-	 * @param the word sequence
-	 * 
-	 * @return set of successors for the word sequence.
+	 * getAllSuccessors method Returns all successors for a word sequence.
 	 */
 
 	public Set<String> getAllSuccessors(List<String> wordSequence) {
@@ -172,11 +136,9 @@ public class Prefix {
 	/*
 	 * getRandomSequence method
 	 * 
-	 * Generates a random number between 0 and total number of sequences.
-	 * Accesses key set of word sequences and puts it in for each loop. Random
-	 * number tells us when to stop and what value to return.
-	 * 
-	 * @return a random word sequence.
+	 * Generates a random number between 0 and total number of sequences. Accesses
+	 * key set of word sequences and puts it in for each loop. Random number tells
+	 * us when to stop and what value to return.
 	 * 
 	 */
 
@@ -197,7 +159,7 @@ public class Prefix {
 			i++;
 		}
 
-		// empty keySet case handled in getAllWords method
+		// Empty keySet case handled in getAllWords method
 		return Collections.emptyList();
 
 	}
@@ -237,5 +199,4 @@ public class Prefix {
 		}
 		return true;
 	}
-
 }

@@ -1,7 +1,3 @@
-// Author: Kevin L
-// https://github.com/kle510
-// November 2016
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -17,7 +13,6 @@ import java.io.IOException;
  */
 
 public class GenText {
-
 	public static void main(String[] args) {
 
 		boolean DEBUG = false;
@@ -65,7 +60,6 @@ public class GenText {
 			randomText.inputText(inFile, prefixLength, DEBUG);
 			randomText.outputText(outFile, numWords, prefixLength, DEBUG);
 		}
-
 		catch (FileNotFoundException exception) {
 			System.out.println("File not found");
 			System.exit(0);
@@ -79,7 +73,5 @@ public class GenText {
 		} catch (IOException exception) {
 			exception.printStackTrace();
 		}
-
 	}
-
 }

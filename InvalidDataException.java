@@ -1,7 +1,3 @@
-// Author: Kevin L
-// https://github.com/kle510
-// November 2016
-
 import java.io.IOException;
 
 /*
@@ -13,7 +9,6 @@ import java.io.IOException;
  */
 
 public class InvalidDataException extends IOException
-
 {
 	public InvalidDataException() {
 

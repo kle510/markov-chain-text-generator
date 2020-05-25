@@ -1,9 +1,7 @@
-README
+# Markov Chain Text Generator Project
+An NLP project using a text generation algorithm based off Markov chains to generate comprehensive sentences from word sequences.
 
-Markov Chain Text Generator Project
-
-
-Project Description
+## Project Description
 
 There are 6 classes. GenText contains the main method, processes the command line arguments, and handles errors. InvalidDataException handles the exceptions not covered by main. OutFileFormatting takes care of formatting for output string before it's writen to the file. RandomTextGenerator reads the command line arguments passed by GenText, processes it, and writes out the essay to file. Prefix class is a hashmap contains all of the methods associated with the word sequences. Successor class is a hashmap that contains all of the methods associated with the successors. 
 

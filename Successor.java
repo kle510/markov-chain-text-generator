@@ -21,22 +21,12 @@ public class Successor {
 	private HashMap<String, Integer> successor;
 	private int size = 0; // initialize amount of successors
 
-	/*
-	 * Successor Constructor
-	 * 
-	 * Creates a new HashMap.
-	 */
-
 	public Successor() {
 		successor = new HashMap<String, Integer>();
-
 	}
 
 	/*
 	 * getSize method
-	 * 
-	 * @return number of successors.
-	 * 
 	 */
 
 	public int getSize() {
@@ -44,10 +34,7 @@ public class Successor {
 	}
 
 	/*
-	 * getSize method
-	 * 
-	 * @return set of successors.
-	 * 
+	 * getSuccessors method
 	 */
 
 	public Set<String> getSuccessors() {
@@ -57,14 +44,9 @@ public class Successor {
 	/*
 	 * add Method
 	 * 
-	 * Increase total number of successor words by one. Adds a successor word to
-	 * the HashMap if it isn't there already Increments amount of the successor
-	 * word by one if it's in the HashMap. Updates the most frequent successor
-	 * word.
-	 * 
-	 * 
-	 * @param successor word.
-	 * 
+	 * Increase total number of successor words by one. Adds a successor word to the
+	 * HashMap if it isn't there already Increments amount of the successor word by
+	 * one if it's in the HashMap. Updates the most frequent successor word.
 	 */
 
 	public void add(String successorWord) {
@@ -80,29 +62,27 @@ public class Successor {
 		else {
 			successor.put(successorWord, 1);
 		}
-
 	}
 
 	/*
 	 * getRandomWord method
 	 * 
-	 * Generates a random number between 0 and total number of successors .
-	 * Accesses key set of successor words and puts it in for each loop. Random
-	 * number tells us when to stop and what value to return. As each successor
-	 * word is looped, ask how many times the word appeared and add it to the
-	 * sum. If the random number generated is less than sum, return the word.
-	 * This way, probability is handled so that the chances of choosing the
-	 * random successor word is proportional to the frequency of the word in the
-	 * set.
+	 * Generates a random number between 0 and total number of successors . Accesses
+	 * key set of successor words and puts it in for each loop. Random number tells
+	 * us when to stop and what value to return. As each successor word is looped,
+	 * ask how many times the word appeared and add it to the sum. If the random
+	 * number generated is less than sum, return the word. This way, probability is
+	 * handled so that the chances of choosing the random successor word is
+	 * proportional to the frequency of the word in the set.
 	 * 
-	 * @return successor word. 
 	 */
 
 	public String getRandomWord(boolean DEBUG) {
 
-		
 		int random = new Random().nextInt(getSize());
-		if (DEBUG) {random = new Random(1).nextInt(getSize());}
+		if (DEBUG) {
+			random = new Random(1).nextInt(getSize());
+		}
 		int sum = 0;
 
 		for (String randomWord : successor.keySet()) {
@@ -114,7 +94,8 @@ public class Successor {
 			}
 		}
 
-		return ""; // potential room for error handled in upper levels.
+		// potential room for error handled in upper levels.
+		return "";
 
 	}
 
@@ -153,5 +134,4 @@ public class Successor {
 		result = prime * result + ((successor == null) ? 0 : successor.hashCode());
 		return result;
 	}
-
 }
